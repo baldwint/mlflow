@@ -4,10 +4,12 @@ import { getExtension,
     IMAGE_EXTENSIONS,
     TEXT_EXTENSIONS,
     MAP_EXTENSIONS,
+    VEGA_EXTENSIONS,
     HTML_EXTENSIONS} from '../../../common/utils/FileUtils';
 import ShowArtifactImageView from './ShowArtifactImageView';
 import ShowArtifactTextView from './ShowArtifactTextView';
 import ShowArtifactMapView from './ShowArtifactMapView';
+import ShowArtifactVegaView from './ShowArtifactVegaView';
 import ShowArtifactHtmlView from './ShowArtifactHtmlView';
 import previewIcon from '../../../common/static/preview-icon.png';
 import './ShowArtifactPage.css';
@@ -29,6 +31,8 @@ class ShowArtifactPage extends Component {
           return <ShowArtifactTextView runUuid={this.props.runUuid} path={this.props.path}/>;
         } else if (MAP_EXTENSIONS.has(normalizedExtension.toLowerCase())) {
           return <ShowArtifactMapView runUuid={this.props.runUuid} path={this.props.path}/>;
+        } else if (VEGA_EXTENSIONS.has(normalizedExtension.toLowerCase())) {
+          return <ShowArtifactVegaView runUuid={this.props.runUuid} path={this.props.path}/>;
         } else if (HTML_EXTENSIONS.has(normalizedExtension.toLowerCase())) {
           return <ShowArtifactHtmlView runUuid={this.props.runUuid} path={this.props.path}/>;
         }
