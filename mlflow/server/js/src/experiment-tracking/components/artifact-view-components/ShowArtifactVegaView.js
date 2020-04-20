@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { getSrc } from './ShowArtifactPage';
 import { getArtifactContent } from './ShowArtifactUtils';
-import { ReactDOM } from 'react-dom';
-import { VegaLite } from 'react-vega';
+import vegaEmbed from 'vega-embed';
 
 class ShowArtifactVegaView extends Component {
   constructor(props) {
@@ -49,10 +48,7 @@ class ShowArtifactVegaView extends Component {
     if (this.state.vegaspec !== undefined) {
 
       // load the vega-lite spec
-      ReactDOM.render(
-        <VegaLite spec={this.state.vegaspec} />,
-        document.getElementById(this.vegaDivId)
-      );
+      vegaEmbed('#vegadiv', this.state.vegaspec);
 
       this.vegaChart = "chart";
     }
