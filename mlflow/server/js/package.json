@@ -50,6 +50,7 @@
     "showdown": "^1.8.6",
     "url-parse": "1.4.3",
     "vega": "^5.10.1",
+    "vega-lite": "^4.10.4",
     "yup": "^0.26.3"
   },
   "devDependencies": {
