@@ -50,7 +50,7 @@ class ShowArtifactVegaView extends Component {
 
       // load the vega-lite spec
       ReactDOM.render(
-        <VegaLite spec={spec} />,
+        <VegaLite spec={this.state.vegaspec} />,
         document.getElementById(this.vegaDivId)
       );
 
@@ -89,4 +89,4 @@ class ShowArtifactVegaView extends Component {
   }
 }
 
-export default ShowArtifactMapView;
+export default ShowArtifactVegaView;
